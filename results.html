@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Your Results • The Champions Code</title>
+<style>
+body{margin:0;background:#000;color:#fff;font:16px/1.5 system-ui,Arial}
+.wrap{max-width:900px;margin:0 auto;padding:24px}.card{border:1px solid #ffffff22;border-radius:12px;padding:16px;margin:10px 0}
+.tag{display:inline-block;background:#d4af37;color:#000;padding:2px 8px;border-radius:999px;font-weight:700}a{color:#d4af37}
+</style></head><body><div class="wrap">
+<h1>Your Champion’s Code</h1><p style="color:#d4af37">Based on your 25‑question assessment</p>
+<div id="out" class="card">Loading…</div>
+<div class="card"><strong>Upgrade to Pro</strong> for full 8‑code chart, coaching guide, and resources.</div>
+<p><a href="/assessment.html">Retake the assessment</a></p></div>
+<script>(function(){var data=null;try{data=JSON.parse(localStorage.getItem('cc_last_result')||'null');}catch(e){};
+var el=document.getElementById('out');if(!data){el.innerHTML='No result found. Please complete the assessment.';return;}
+var h='';h+='<div><h2>Dominant: <span class="tag">'+data.dominant+'</span></h2><p>Cue & strengths will show here.</p></div>';
+h+='<hr style="border:0;border-top:1px solid #ffffff22;margin:12px 0" />';
+h+='<div><h2>Supporting</h2><p>'+data.supporting.join(', ')+'</p></div>';
+h+='<hr style="border:0;border-top:1px solid #ffffff22;margin:12px 0" />';
+h+='<div><h2>Weakest</h2><p>'+data.weakest+'</p></div>';
+h+='<hr style="border:0;border-top:1px solid #ffffff22;margin:12px 0" />';
+h+='<div><h2>Percentages</h2><pre style="white-space:pre-wrap">'+JSON.stringify(data.pct,null,2)+'</pre></div>';
+var dom=document.createElement('div');dom.className='card';dom.innerHTML=h;el.replaceWith(dom);})();</script>
+</body></html>
